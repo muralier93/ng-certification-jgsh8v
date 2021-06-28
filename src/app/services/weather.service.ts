@@ -10,6 +10,9 @@ export class WeatherService {
   private APIKey = '5a4b2d457ecbef9eb2a71e480b947604';
   private forecastAPI =
     'https://api.openweathermap.org/data/2.5/forecast/daily?zip=';
+
+  private weatherImgPath = 'https://www.angulartraining.com/images/weather/';
+
   constructor(private httpClient: HttpClient) {}
 
   addWeatherData(pincode: any): Observable<any> {
@@ -34,7 +37,7 @@ export class WeatherService {
   };
 
   getBaseWhetherImgPath(): string {
-    return 'https://www.angulartraining.com/images/weather/';
+    return this.weatherImgPath;
   }
   getWeatherImgs(): any {
     return this.weatherImgs;
