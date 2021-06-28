@@ -11,12 +11,12 @@ export class WeatherComponent implements OnInit {
   weatherData = { zipcode: '', data: '', forecastLink: '', icon: '' };
   weatherDataArray: any[] = [];
 
-  baseweatherImgPath: string;
+  baseWeatherImgPath: string;
   weatherImg: any;
 
   constructor(private ws: WeatherService) {
-    this.baseweatherImgPath = this.ws.getBaseWhetherImgPath();
-    this.weatherImg = this.ws.getweatherImgs();
+    this.baseWeatherImgPath = this.ws.getBaseWhetherImgPath();
+    this.weatherImg = this.ws.getWeatherImgs();
   }
 
   ngOnInit() {

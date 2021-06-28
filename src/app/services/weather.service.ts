@@ -36,7 +36,7 @@ export class WeatherService {
   getBaseWhetherImgPath(): string {
     return 'https://www.angulartraining.com/images/weather/';
   }
-  getweatherImgs(): any {
+  getWeatherImgs(): any {
     return this.weatherImgs;
   }
 }

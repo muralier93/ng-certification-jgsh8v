@@ -20,7 +20,7 @@ export class ForecastComponent implements OnInit {
     private ws: WeatherService
   ) {
     this.baseWeatherImgPath = this.ws.getBaseWhetherImgPath();
-    this.weatherImg = this.ws.getweatherImgs();
+    this.weatherImg = this.ws.getWeatherImgs();
   }
 
   ngOnInit() {
