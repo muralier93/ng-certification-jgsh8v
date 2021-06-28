@@ -11,12 +11,12 @@ export class WeatherComponent implements OnInit {
   weatherData = { zipcode: '', data: '', forecastLink: '', icon: '' };
   weatherDataArray: any[] = [];
 
-  baseWheatherImgPath: string;
-  wheatherImg: any;
+  baseweatherImgPath: string;
+  weatherImg: any;
 
   constructor(private ws: WeatherService) {
-    this.baseWheatherImgPath = this.ws.getBaseWhetherImgPath();
-    this.wheatherImg = this.ws.getWheatherImgs();
+    this.baseweatherImgPath = this.ws.getBaseWhetherImgPath();
+    this.weatherImg = this.ws.getweatherImgs();
   }
 
   ngOnInit() {
@@ -69,13 +69,17 @@ export class WeatherComponent implements OnInit {
             );
           }
         } else {
-          alert('weather Data not found for given zipcode.');
+          alert(
+            'weather Data not found for given zipcode, try with other zipcode'
+          );
         }
       },
       error => {
         console.log('error', error);
         this.isSpinner = true;
-        alert('Data  not found try with other zipcode');
+        alert(
+          'weather Data not found for given zipcode, try with other zipcode'
+        );
       }
     );
   }

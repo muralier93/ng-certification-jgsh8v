@@ -5,28 +5,28 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class WeatherService {
-  private WeatherAPI: string =
+  private weatherAPI: string =
     'https://api.openweathermap.org/data/2.5/weather?q=';
   private APIKey = '5a4b2d457ecbef9eb2a71e480b947604';
-  private foreCastAPI =
+  private forecastAPI =
     'https://api.openweathermap.org/data/2.5/forecast/daily?zip=';
   constructor(private httpClient: HttpClient) {}
 
   addWeatherData(pincode: any): Observable<any> {
     let url =
-      this.WeatherAPI + pincode + ',us&units=metric&appid=' + this.APIKey;
+      this.weatherAPI + pincode + ',us&units=metric&appid=' + this.APIKey;
     return this.httpClient.get(url);
   }
   getForcastData(pincode: any): Observable<any> {
     let url =
-      this.foreCastAPI +
+      this.forecastAPI +
       pincode +
       ',us&cnt=5&units=metric&appid=' +
       this.APIKey;
     return this.httpClient.get(url);
   }
 
-  private wheatherImgs: any = {
+  private weatherImgs: any = {
     Clear: 'sun.png',
     Clouds: 'clouds.png',
     Rain: 'rain.png',
@@ -36,7 +36,7 @@ export class WeatherService {
   getBaseWhetherImgPath(): string {
     return 'https://www.angulartraining.com/images/weather/';
   }
-  getWheatherImgs(): any {
-    return this.wheatherImgs;
+  getweatherImgs(): any {
+    return this.weatherImgs;
   }
 }

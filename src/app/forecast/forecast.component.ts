@@ -11,16 +11,16 @@ export class ForecastComponent implements OnInit {
   pincode: string = '';
   forecastData = { city: '', cod: '', message: 0, cnt: 40, list: [] };
 
-  baseWheatherImgPath: string;
-  wheatherImg: any;
+  baseWeatherImgPath: string;
+  weatherImg: any;
 
   constructor(
     private router: Router,
     private arouter: ActivatedRoute,
     private ws: WeatherService
   ) {
-    this.baseWheatherImgPath = this.ws.getBaseWhetherImgPath();
-    this.wheatherImg = this.ws.getWheatherImgs();
+    this.baseWeatherImgPath = this.ws.getBaseWhetherImgPath();
+    this.weatherImg = this.ws.getweatherImgs();
   }
 
   ngOnInit() {
